@@ -5,7 +5,7 @@ services:
     build:
       context: .
       dockerfile: ./docker/node/Dockerfile
-    command: sh -c "npm run dev-run" # run server in dev mode.
+    command: sh -c "npm run start:dev" # run server in dev mode.
     restart: 'always'
     volumes:
       - ./app:/app
