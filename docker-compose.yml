@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  node:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    command: sh -c "npm run dev-run" # run server in dev mode.
+    restart: 'always'
+    volumes:
+      - ./app:/app
+    ports:
+      - "3000:3000"
+    environment:
+      PORT: 3000
+
+  # Command line for install, check
+  node-cli:
+    build:
+      context: .
+      dockerfile: ./docker/node/Dockerfile
+    restart: 'no'
+    volumes:
+      - ./app:/app
+    environment:
+      PORT: 3000
