@@ -1,5 +1,11 @@
 ## Hints for Applications Using Nest JS
 
+## Running the app
+* `make init` Run app in dev mode
+* `make down` Stop app
+* `make lint` Run api linters
+* `make lint-fix` Run api linters with `fix` mode
+
 ## Helpful links
 * [Docs][101] Official docs.
 * [Starter project][102] Nest framework TypeScript starter.

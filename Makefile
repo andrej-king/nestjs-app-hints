@@ -1,9 +1,11 @@
 init: docker-down \
 	docker-build \
 	docker-up \
-	app-install-dependencies
+	api-install-dependencies
 
 down: docker-down
+lint: api-lint
+lint-fix: api-lint-fix
 
 # docker run
 docker-up:
@@ -22,5 +24,11 @@ docker-build:
 	docker-compose build #--pull
 
 # npm install
-app-install-dependencies:
+api-install-dependencies:
 	docker-compose run --rm node-cli npm install
+
+api-lint:
+	docker-compose run --rm node-cli npm run lint
+
+api-lint-fix:
+	docker-compose run --rm node-cli npm run lint:fix
