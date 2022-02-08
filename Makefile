@@ -23,6 +23,9 @@ docker-down-clear:
 docker-build:
 	docker-compose build #--pull
 
+api-generate-module:
+	docker-compose run --rm node-cli sh -c 'nest g module ${NAME}'
+
 # npm install
 api-install-dependencies:
 	docker-compose run --rm node-cli npm install
