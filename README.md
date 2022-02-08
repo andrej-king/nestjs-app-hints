@@ -5,6 +5,10 @@
 * `make down` Stop app
 * `make lint` Run api linters
 * `make lint-fix` Run api linters with `fix` mode
+* `USER_ID=${UID} make api-permissions` Set owner files by user id.
+* `TYPE=<schematic type> NAME=<schematic name> PARAMS=<schematic params> api-generate-schematic` Generate nest schematic
+  * `TYPE=module NAME="auth"" api-generate-schematic` Generate auth module
+  * `TYPE=class NAME="product/product.model" PARAMS="--no-spec" make api-generate-schematic` Generate product class without tests
 
 ## Helpful links
 * [Docs][101] Official docs.

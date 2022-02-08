@@ -23,8 +23,11 @@ docker-down-clear:
 docker-build:
 	docker-compose build #--pull
 
-api-generate-module:
-	docker-compose run --rm node-cli sh -c 'nest g module ${NAME}'
+# examples:
+# TYPE=module NAME=auth make api-generate-schematic
+# TYPE=class NAME="product/product.model" make api-generate-schematic
+api-generate-schematic:
+	docker-compose run --rm node-cli sh -c 'nest g ${TYPE} ${NAME} ${PARAMS}'
 
 # npm install
 api-install-dependencies:
@@ -35,3 +38,7 @@ api-lint:
 
 api-lint-fix:
 	docker-compose run --rm node-cli npm run lint:fix
+
+# USER_ID=${UID} make api-permissions
+api-permissions:
+	docker run --rm -v ${PWD}/app:/app -w /app alpine chown -R ${USER_ID}:${USER_ID} .
