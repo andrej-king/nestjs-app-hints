@@ -14,6 +14,7 @@
 * [Docs][101] Official docs.
 * [Starter project][102] Nest framework TypeScript starter.
 * [Cli commands][103] Usage
+* [Request decorators][104]
 
 ## Nest helpful commands
 * `nest new <name>`[Creates][201] a new (standard mode) Nest project
@@ -27,6 +28,7 @@
 [101]: https://docs.nestjs.com/
 [102]: https://github.com/nestjs/typescript-starter
 [103]: https://docs.nestjs.com/cli/usages
+[104]: https://docs.nestjs.com/controllers#request-object
 
 [201]: https://docs.nestjs.com/cli/usages#nest-new
 [202]: https://docs.nestjs.com/cli/usages#nest-generate
