@@ -9,6 +9,7 @@
 * `TYPE=<schematic type> NAME=<schematic name> PARAMS=<schematic params> api-generate-schematic` Generate nest schematic
   * `TYPE=module NAME="auth"" api-generate-schematic` Generate auth module
   * `TYPE=class NAME="product/product.model" PARAMS="--no-spec" make api-generate-schematic` Generate product class without tests
+  * `TYPE=controller NAME=auth PARAMS="--no-spec" make api-generate-schematic` Generate auth controller without tests
 
 ## Helpful links
 * [Docs][101] Official docs.
