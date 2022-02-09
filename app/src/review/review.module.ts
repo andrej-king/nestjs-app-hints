@@ -1,6 +1,6 @@
 import {Module} from '@nestjs/common'
 import {ReviewController} from './review.controller'
-import {TypegooseModule} from "nestjs-typegoose";
+import {TypegooseModule} from 'nestjs-typegoose'
 
 @Module({
   controllers: [ReviewController],
@@ -9,10 +9,10 @@ import {TypegooseModule} from "nestjs-typegoose";
       {
         typegooseClass: ReviewModule,
         schemaOptions: {
-          collection: 'Review'
-        }
-      }
-    ])
-  ]
+          collection: 'Review',
+        },
+      },
+    ]),
+  ],
 })
 export class ReviewModule {}
