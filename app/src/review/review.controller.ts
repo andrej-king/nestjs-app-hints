@@ -2,11 +2,10 @@ import {Body, Controller, Delete, Get, HttpException, HttpStatus, Param, Post} f
 import {CreateReviewDto} from "./dto/create-review.dto";
 import {ReviewService} from "./review.service";
 import {REVIEW_NOT_FOUND} from "./review.constants";
-import {InjectModel} from "nestjs-typegoose";
 
 @Controller('review')
 export class ReviewController {
-  constructor(@InjectModel(ReviewService) private readonly reviewService: ReviewService) {}
+  constructor(private readonly reviewService: ReviewService) {}
 
   @Post('create')
   async create(@Body() dto: CreateReviewDto) {
