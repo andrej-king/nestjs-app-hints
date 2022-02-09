@@ -16,7 +16,7 @@
 * [Starter project][102] Nest framework TypeScript starter.
 * [Cli commands][103] Usage
 * [Request decorators][104]
-* [Providers][105] With DI
+* [Providers][105] With DI. [Injection scopes][106]
 
 ## Nest helpful commands
 * `nest new <name>`[Creates][201] a new (standard mode) Nest project
@@ -32,6 +32,7 @@
 [103]: https://docs.nestjs.com/cli/usages
 [104]: https://docs.nestjs.com/controllers#request-object
 [105]: https://docs.nestjs.com/providers
+[106]: https://docs.nestjs.com/fundamentals/injection-scopes
 
 [201]: https://docs.nestjs.com/cli/usages#nest-new
 [202]: https://docs.nestjs.com/cli/usages#nest-generate
