@@ -6,6 +6,7 @@ init: docker-down \
 down: docker-down
 lint: api-lint
 lint-fix: api-lint-fix
+test-e2e: api-test-e2e
 
 # docker run
 docker-up:
@@ -43,3 +44,6 @@ api-lint-fix:
 # USER_ID=${UID} make api-permissions
 api-permissions:
 	docker run --rm -v ${PWD}/app:/app -w /app alpine chown -R ${USER_ID}:${USER_ID} .
+
+api-test-e2e:
+	docker-compose run --rm node-cli npm run test:e2e

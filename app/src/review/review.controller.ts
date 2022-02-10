@@ -10,7 +10,7 @@ import {
 } from '@nestjs/common'
 import {CreateReviewDto} from './dto/create-review.dto'
 import {ReviewService} from './review.service'
-import {REVIEW_NOT_FOUND} from './review.constants'
+import {REVIEW_NOT_FOUND, REVIEWS_BY_PRODUCT_ID_NOT_FOUND} from './review.constants'
 
 @Controller('review')
 export class ReviewController {
@@ -31,6 +31,11 @@ export class ReviewController {
 
   @Get('byProduct/:productId')
   async getByProduct(@Param('productId') productId: string) {
-    return this.reviewService.findByProductId(productId)
+    const review = await this.reviewService.findByProductId(productId)
+    if (!review.length) {
+      throw new HttpException(REVIEWS_BY_PRODUCT_ID_NOT_FOUND, HttpStatus.NOT_FOUND)
+    }
+
+    return review
   }
 }
