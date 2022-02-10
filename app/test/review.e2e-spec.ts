@@ -2,9 +2,9 @@ import {Test, TestingModule} from '@nestjs/testing'
 import {INestApplication} from '@nestjs/common'
 import * as request from 'supertest'
 import {AppModule} from '../src/app.module'
-import {CreateReviewDto} from "../src/review/dto/create-review.dto";
+import {CreateReviewDto} from '../src/review/dto/create-review.dto'
 import {Types, disconnect} from 'mongoose'
-import {REVIEW_NOT_FOUND, REVIEWS_BY_PRODUCT_ID_NOT_FOUND} from "../src/review/review.constants";
+import {REVIEW_NOT_FOUND, REVIEWS_NOT_FOUND} from '../src/review/review.constants'
 
 const productId = new Types.ObjectId().toHexString()
 
@@ -13,7 +13,7 @@ const testDto: CreateReviewDto = {
   title: 'Header',
   description: 'Test description',
   rating: 5,
-  productId: productId
+  productId: productId,
 }
 
 describe('AppController (e2e)', () => {
@@ -31,10 +31,10 @@ describe('AppController (e2e)', () => {
 
   afterAll(async () => {
     await disconnect()
-    await app.close();
-  });
+    await app.close()
+  })
 
-  it('/review/create (POST) - success', async ()  => {
+  it('/review/create (POST) - success', async () => {
     return request(app.getHttpServer())
       .post('/review/create')
       .send(testDto)
@@ -45,7 +45,7 @@ describe('AppController (e2e)', () => {
       })
   })
 
-  it('/review/byProduct/:id (GET) - success', async ()  => {
+  it('/review/byProduct/:id (GET) - success', async () => {
     return request(app.getHttpServer())
       .get('/review/byProduct/' + productId)
       .expect(200)
@@ -54,27 +54,27 @@ describe('AppController (e2e)', () => {
       })
   })
 
-  it('/review/byProduct/:id (GET) - fail', ()  => {
+  it('/review/byProduct/:id (GET) - fail', () => {
     return request(app.getHttpServer())
       .get('/review/byProduct/' + new Types.ObjectId().toHexString())
       .expect(404, {
         statusCode: 404,
-        message: REVIEWS_BY_PRODUCT_ID_NOT_FOUND
+        message: REVIEWS_NOT_FOUND,
       })
   })
 
-  it('/review/:id (DELETE) - success', ()  => {
+  it('/review/:id (DELETE) - success', () => {
     return request(app.getHttpServer())
       .delete('/review/' + createdId)
       .expect(200)
   })
 
-  it('/review/:id (DELETE) - fail', ()  => {
+  it('/review/:id (DELETE) - fail', () => {
     return request(app.getHttpServer())
       .delete('/review/' + new Types.ObjectId().toHexString())
       .expect(404, {
         statusCode: 404,
-        message: REVIEW_NOT_FOUND
+        message: REVIEW_NOT_FOUND,
       })
   })
 })
