@@ -9,6 +9,7 @@ class ProductCharacteristic {
   value: string
 }
 
+// eslint-disable-next-line
 export interface ProductModel extends Base {}
 export class ProductModel extends TimeStamps {
   @prop()

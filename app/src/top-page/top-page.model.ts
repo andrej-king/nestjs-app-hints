@@ -30,6 +30,7 @@ export class TopPageAdvantage {
   description: string
 }
 
+// eslint-disable-next-line
 export interface TopPageModel extends Base {}
 export class TopPageModel extends TimeStamps {
   @prop({enum: TopLevelCategory})
