@@ -4,6 +4,7 @@ import {DocumentType, ModelType} from '@typegoose/typegoose/lib/types'
 import {CreateReviewDto} from './dto/create-review.dto'
 import {Types} from 'mongoose'
 import {InjectModel} from 'nestjs-typegoose'
+import {DeleteResult} from 'mongodb'
 
 @Injectable()
 export class ReviewService {
@@ -28,7 +29,7 @@ export class ReviewService {
       .exec()
   }
 
-  async deleteByProductId(productId: string) {
+  async deleteByProductId(productId: string): Promise<DeleteResult> {
     return this.reviewModel
       .deleteMany({productId: new Types.ObjectId(productId)})
       .exec()

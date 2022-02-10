@@ -14,21 +14,22 @@ import {ConfigService} from '@nestjs/config'
 
 @Controller('top-page')
 export class TopPageController {
-  constructor() {}
-
   @Post('create') // dto exclude _id field
-  async create(@Body() dto: Omit<TopPageModel, '_id'>) {}
+  async create(@Body() dto: Omit<TopPageModel, '_id'>): Promise<void> {}
 
   @Get(':id')
-  async get(@Param('id') id: string) {}
+  async get(@Param('id') id: string): Promise<void> {}
 
   @Delete(':id')
-  async delete(@Param('id') id: string) {}
+  async delete(@Param('id') id: string): Promise<void> {}
 
   @Patch(':id')
-  async patch(@Param('id') id: string, @Body() dto: TopPageModel) {}
+  async patch(
+    @Param('id') id: string,
+    @Body() dto: TopPageModel,
+  ): Promise<void> {}
 
   @HttpCode(200)
   @Post()
-  async find(@Body() dto: FindTopPageDto) {}
+  async find(@Body() dto: FindTopPageDto): Promise<void> {}
 }
