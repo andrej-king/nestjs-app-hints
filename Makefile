@@ -6,6 +6,8 @@ init: docker-down \
 down: docker-down
 lint: api-lint
 lint-fix: api-lint-fix
+
+tests: test-unit test-e2e
 test-e2e: api-test-e2e
 test-unit: api-test-unit
 

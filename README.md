@@ -5,6 +5,9 @@
 * `make down` Stop app
 * `make lint` Run api linters
 * `make lint-fix` Run api linters with `fix` mode
+* `make tests` Run all tests
+* `make test-unit` Run unit tests
+* `make test-e2e` Run e2e tests
 * `USER_ID=${UID} make api-permissions` Set owner files by user id.
 * `TYPE=<schematic type> NAME=<schematic name> PARAMS=<schematic params> api-generate-schematic` Generate nest schematic
   * `TYPE=module NAME="auth"" api-generate-schematic` Generate auth module
