@@ -21,6 +21,9 @@
 * [Request decorators][104]
 * [Providers][105] With DI. [Injection scopes][106]
 
+## Helpful packages
+* [class-transformer][301] and [class-validator][302]` to validate dto.
+
 ## Nest helpful commands
 * `nest new <name>`[Creates][201] a new (standard mode) Nest project
 * `nest generate <schematic> <name> [options]` [Generates][202] and/or modifies files based on a schematic
@@ -44,3 +47,6 @@
 [205]: https://docs.nestjs.com/cli/usages#nest-add
 [206]: https://docs.nestjs.com/cli/usages#nest-update
 [207]: https://docs.nestjs.com/cli/usages#nest-info
+
+[301]: https://github.com/typestack/class-transformer
+[302]: https://github.com/typestack/class-validator
