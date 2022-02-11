@@ -7,6 +7,7 @@ down: docker-down
 lint: api-lint
 lint-fix: api-lint-fix
 test-e2e: api-test-e2e
+test-unit: api-test-unit
 
 # docker run
 docker-up:
@@ -47,3 +48,6 @@ api-permissions:
 
 api-test-e2e:
 	docker-compose run --rm node-cli npm run test:e2e
+
+api-test-unit:
+	docker-compose run --rm node-cli npm run test
