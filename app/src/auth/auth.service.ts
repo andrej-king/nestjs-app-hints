@@ -1,8 +1,9 @@
 import {Injectable} from '@nestjs/common'
 import {AuthDto} from './dto/auth.dto'
-import {ModelType} from '@typegoose/typegoose/lib/types'
+import {DocumentType, ModelType} from '@typegoose/typegoose/lib/types'
 import {UserModel} from './user.model'
 import {InjectModel} from 'nestjs-typegoose'
+import {genSaltSync, hashSync} from 'bcryptjs'
 
 @Injectable()
 export class AuthService {
@@ -11,7 +12,17 @@ export class AuthService {
     private readonly userModel: ModelType<UserModel>,
   ) {}
 
-  async createUser(dto: AuthDto): Promise<void> {}
+  async createUser(dto: AuthDto): Promise<DocumentType<UserModel>> {
+    const salt = genSaltSync(10)
+    const newUser = new this.userModel({
+      email: dto.login,
+      passwordHash: hashSync(dto.password, salt),
+    })
 
-  async findUser(email: string): Promise<void> {}
+    return newUser.save()
+  }
+
+  async findUser(email: string): Promise<DocumentType<UserModel> | null> {
+    return this.userModel.findOne({email}).exec()
+  }
 }
