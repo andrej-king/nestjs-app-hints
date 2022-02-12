@@ -53,9 +53,6 @@ describe('AppController (e2e)', () => {
       .post('/review/create')
       .send({...testDto, rating: 0})
       .expect(400)
-      .then(({body}: request.Response) => {
-        console.log(body)
-      })
   })
 
   it('/review/byProduct/:id (GET) - success', async () => {
