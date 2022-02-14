@@ -1,4 +1,4 @@
-FROM node:17-alpine
+FROM node:17.4.0-alpine
 
 RUN npm i -g npm@latest @nestjs/cli typescript
 

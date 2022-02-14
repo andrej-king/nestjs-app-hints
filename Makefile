@@ -36,7 +36,7 @@ api-generate-schematic:
 
 # npm install
 api-install-dependencies:
-	docker-compose run --rm node-cli npm install
+	docker-compose run --rm node-cli npm install --force
 
 api-lint:
 	docker-compose run --rm node-cli npm run lint
