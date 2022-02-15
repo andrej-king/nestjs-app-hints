@@ -16,7 +16,6 @@ const loginDto: AuthDto = {
   login: 'review-e2e@test.app',
   password: 'review-password',
 }
-let token: string
 
 const testDto: CreateReviewDto = {
   name: 'Test',
@@ -26,9 +25,10 @@ const testDto: CreateReviewDto = {
   productId: productId,
 }
 
-describe('AppController (e2e)', () => {
+describe('ReviewController (e2e)', () => {
   let app: INestApplication
   let createdId: string
+  let token: string
 
   beforeAll(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
