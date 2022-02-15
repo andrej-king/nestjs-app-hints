@@ -13,8 +13,7 @@ services:
       - "3000:3000"
     environment:
       PORT: 3000
-    depends_on:
-      - mongo
+    depends_on: mongo
 
   # Command line for install, check
   node-cli:
@@ -26,8 +25,7 @@ services:
       - ./app:/app
     environment:
       PORT: 3000
-    depends_on:
-      - mongo
+    depends_on: mongo
 
   mongo:
     image: mongo:5.0
