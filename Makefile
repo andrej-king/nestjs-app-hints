@@ -31,6 +31,7 @@ docker-build:
 # TYPE=module NAME=auth make api-generate-schematic
 # TYPE=class NAME="product/product.model" PARAMS="--no-spec" make api-generate-schematic
 # TYPE=controller NAME=auth PARAMS="--no-spec" make api-generate-schematic
+# TYPE=service NAME=product PARAMS="--no-spec" make api-generate-schematic
 api-generate-schematic:
 	docker-compose run --rm node-cli sh -c 'nest g ${TYPE} ${NAME} ${PARAMS}'
 

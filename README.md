@@ -13,6 +13,7 @@
   * `TYPE=module NAME="auth"" api-generate-schematic` Generate auth module
   * `TYPE=class NAME="product/product.model" PARAMS="--no-spec" make api-generate-schematic` Generate product class without tests
   * `TYPE=controller NAME=auth PARAMS="--no-spec" make api-generate-schematic` Generate auth controller without tests
+  * `TYPE=service NAME=product PARAMS="--no-spec" make api-generate-schematic` Generate product service without tests 
 
 ## Helpful links
 * [Docs][101] Official docs.
