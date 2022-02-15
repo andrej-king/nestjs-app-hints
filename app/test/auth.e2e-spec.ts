@@ -7,8 +7,8 @@ import {AuthDto} from '../src/auth/dto/auth.dto'
 import {USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR} from '../src/auth/auth.constants'
 
 const loginDto: AuthDto = {
-  login: 'review-e2e@test.app',
-  password: 'review-password',
+  login: 'auth-e2e@test.app',
+  password: 'auth-password',
 }
 
 describe('AuthController (e2e)', () => {
