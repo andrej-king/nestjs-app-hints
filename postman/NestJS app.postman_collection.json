@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "c3438d5d-4fd9-4ed1-84a5-2d038ff14e31",
+		"name": "NestJS app",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"image\": \"1.png\",\n    \"title\": \"My product\",\n    \"price\": 100,\n    \"oldPrice\": 120,\n    \"credit\": 10,\n    \"description\": \"\",\n    \"advantages\": \"\",\n    \"disAdvantages\": \"\",\n    \"categories\": [\"test\"],\n    \"tags\": [\"tag1\"],\n    \"characteristics\": [\n        {\n            \"name\": \"characteristic 1\",\n            \"value\": \"1\"\n        },\n        {\n            \"name\": \"characteristic 2\",\n            \"value\": \"2\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"category\": \"test\",\n    \"limit\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/find",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"image\": \"3.png\",\n    \"title\": \"My new product\",\n    \"price\": 100,\n    \"oldPrice\": 120,\n    \"credit\": 10,\n    \"description\": \"\",\n    \"advantages\": \"\",\n    \"disAdvantages\": \"\",\n    \"categories\": [\"test\"],\n    \"tags\": [\"tag1\"],\n    \"characteristics\": [\n        {\n            \"name\": \"characteristic 1\",\n            \"value\": \"1\"\n        },\n        {\n            \"name\": \"characteristic 2\",\n            \"value\": \"2\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/620c0da54a43d66b9010dac9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"620c0da54a43d66b9010dac9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete product by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"image\": \"3.png\",\n    \"title\": \"My new product\",\n    \"price\": 100,\n    \"oldPrice\": 120,\n    \"credit\": 10,\n    \"description\": \"\",\n    \"advantages\": \"\",\n    \"disAdvantages\": \"\",\n    \"categories\": [\"test\"],\n    \"tags\": [\"tag1\"],\n    \"characteristics\": [\n        {\n            \"name\": \"characteristic 1\",\n            \"value\": \"1\"\n        },\n        {\n            \"name\": \"characteristic 2\",\n            \"value\": \"2\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/product/620c0da54a43d66b9010dac9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"620c0da54a43d66b9010dac9"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"1231@example.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"login\": \"1231@example.com\",\n    \"password\": \"123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review",
+			"item": [
+				{
+					"name": "Get by product id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzFAZXhhbXBsZS5jb20iLCJpYXQiOjE2NDQ5NDcyNDZ9.y3-gAeumgSSsMGfuLTICX09K9ilRq0oE5sUBzhA2I5s",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/review/byProduct/620be3ae2304f635a930f920",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"byProduct",
+								"620be3ae2304f635a930f920"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create review",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test review\",\n    \"title\": \"Review Header\",\n    \"description\": \"Test review description\",\n    \"rating\": 5,\n    \"productId\": \"620c0f56e452134b1659ad2a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/review/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
