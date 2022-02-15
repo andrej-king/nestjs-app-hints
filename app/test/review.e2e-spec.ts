@@ -13,8 +13,8 @@ import {AuthDto} from '../src/auth/dto/auth.dto'
 const productId = new Types.ObjectId().toHexString()
 
 const loginDto: AuthDto = {
-  login: '1231@example.com',
-  password: '123'
+  login: 'review-e2e@test.app',
+  password: 'review-password',
 }
 let token: string
 
@@ -30,6 +30,20 @@ describe('AppController (e2e)', () => {
   let app: INestApplication
   let createdId: string
 
+  beforeAll(async () => {
+    const moduleFixture: TestingModule = await Test.createTestingModule({
+      imports: [AppModule],
+    }).compile()
+
+    app = moduleFixture.createNestApplication()
+    await app.init()
+
+    // create user
+    await request(app.getHttpServer())
+      .post('/auth/register')
+      .send(loginDto)
+  })
+
   beforeEach(async () => {
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
@@ -38,6 +52,7 @@ describe('AppController (e2e)', () => {
     app = moduleFixture.createNestApplication()
     await app.init()
 
+    // login by created user
     const {body} = await request(app.getHttpServer())
       .post('/auth/login')
       .send(loginDto)
