@@ -10,11 +10,12 @@ import {
 } from '@nestjs/common'
 import {ProductModel} from './product.model'
 import {FindProductDto} from './dto/find-product.dto'
+import {CreateProductDto} from './dto/create-product.dto'
 
 @Controller('product')
 export class ProductController {
   @Post('create') // dto exclude _id field
-  async create(@Body() dto: Omit<ProductModel, '_id'>): Promise<void> {}
+  async create(@Body() dto: CreateProductDto): Promise<void> {}
 
   @Get(':id')
   async get(@Param('id') id: string): Promise<void> {}
