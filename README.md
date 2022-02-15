@@ -22,7 +22,10 @@
 * [Providers][105] With DI. [Injection scopes][106]
 
 ## Helpful packages
-* [class-transformer][301] and [class-validator][302]` to validate dto.
+* Validate dto (work together):
+  * [class-transformer][301]
+  * [class-validator][302]
+* [passport js][303] Passport is authentication middleware for Node.js
 
 ## Nest helpful commands
 * `nest new <name>`[Creates][201] a new (standard mode) Nest project
@@ -50,3 +53,4 @@
 
 [301]: https://github.com/typestack/class-transformer
 [302]: https://github.com/typestack/class-validator
+[303]: https://www.passportjs.org/
