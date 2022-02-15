@@ -36,7 +36,7 @@ export class ReviewController {
     }
   }
 
-  @UseGuards(JwtAuthGuard)
+  // @UseGuards(JwtAuthGuard)
   @Get('byProduct/:productId')
   async getByProduct(
     @Param('productId') productId: string,
@@ -46,7 +46,7 @@ export class ReviewController {
     if (!review.length) {
       throw new HttpException(REVIEWS_NOT_FOUND, HttpStatus.NOT_FOUND)
     }
-    console.log(email)
+    // console.log(email)
 
     return review
   }
