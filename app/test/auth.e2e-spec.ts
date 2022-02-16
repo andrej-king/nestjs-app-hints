@@ -4,7 +4,10 @@ import * as request from 'supertest'
 import {AppModule} from '../src/app.module'
 import {disconnect} from 'mongoose'
 import {AuthDto} from '../src/auth/dto/auth.dto'
-import {USER_NOT_FOUND_ERROR, WRONG_PASSWORD_ERROR} from '../src/auth/auth.constants'
+import {
+  USER_NOT_FOUND_ERROR,
+  WRONG_PASSWORD_ERROR,
+} from '../src/auth/auth.constants'
 
 const loginDto: AuthDto = {
   login: 'auth-e2e@test.app',
@@ -25,9 +28,7 @@ describe('AuthController (e2e)', () => {
     await app.init()
 
     // create user
-    await request(app.getHttpServer())
-      .post('/auth/register')
-      .send(loginDto)
+    await request(app.getHttpServer()).post('/auth/register').send(loginDto)
   })
 
   beforeEach(async () => {

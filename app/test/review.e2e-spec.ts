@@ -39,9 +39,7 @@ describe('ReviewController (e2e)', () => {
     await app.init()
 
     // create user
-    await request(app.getHttpServer())
-      .post('/auth/register')
-      .send(loginDto)
+    await request(app.getHttpServer()).post('/auth/register').send(loginDto)
   })
 
   beforeEach(async () => {

@@ -14,51 +14,44 @@ export class ProductService {
   ) {}
 
   async create(dto: CreateProductDto): Promise<DocumentType<ProductModel>> {
-    return this.productModel
-      .create(dto)
+    return this.productModel.create(dto)
   }
 
   async findById(id: string): Promise<DocumentType<ProductModel> | null> {
-    return this.productModel
-      .findById(id)
-      .exec()
+    return this.productModel.findById(id).exec()
   }
 
   async deleteById(id: string): Promise<DocumentType<ProductModel> | null> {
-    return this.productModel
-      .findByIdAndDelete(id)
-      .exec()
+    return this.productModel.findByIdAndDelete(id).exec()
   }
 
   async updateById(id: string, dto: CreateProductDto) {
-    return this.productModel
-      .findByIdAndUpdate(id, dto, {new: true})
-      .exec()
+    return this.productModel.findByIdAndUpdate(id, dto, {new: true}).exec()
   }
 
   async findWithReviews(dto: FindProductDto) {
-    return await this.productModel
+    return (await this.productModel
       .aggregate([
         {
           $match: {
-            categories: dto.category
-          }
+            categories: dto.category,
+          },
         },
         {
           $sort: {
-            _id: 1
-          }
+            _id: 1,
+          },
         },
         {
-          $limit: dto.limit
+          $limit: dto.limit,
         },
         {
           $lookup: {
             from: 'Review',
             localField: '_id',
             foreignField: 'productId',
-            as: 'reviews'
-          }
+            as: 'reviews',
+          },
         },
         {
           $addFields: {
@@ -71,12 +64,16 @@ export class ProductService {
                   return reviews;
 							  }`,
                 args: ['$reviews'],
-                lang: 'js'
-              }
-            }
-          }
-        }
+                lang: 'js',
+              },
+            },
+          },
+        },
       ])
-      .exec() as (ProductModel & {review: ReviewModel[], reviewCount: number, reviewAvg: number})[]
+      .exec()) as (ProductModel & {
+      review: ReviewModel[]
+      reviewCount: number
+      reviewAvg: number
+    })[]
   }
 }

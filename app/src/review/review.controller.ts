@@ -6,7 +6,8 @@ import {
   HttpException,
   HttpStatus,
   Param,
-  Post, UseGuards,
+  Post,
+  UseGuards,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
@@ -41,7 +42,7 @@ export class ReviewController {
   @Get('byProduct/:productId')
   async getByProduct(
     @Param('productId', IdValidationPipe) productId: string,
-    @UserEmail() email: string
+    @UserEmail() email: string,
   ): Promise<ReviewModel[] | void> {
     const review = await this.reviewService.findByProductId(productId)
     if (!review.length) {
