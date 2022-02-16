@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "c3438d5d-4fd9-4ed1-84a5-2d038ff14e31",
+		"_postman_id": "29d000fe-2225-4c04-a12f-82c21e91bcc8",
 		"name": "NestJS app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -119,6 +119,26 @@
 								"api",
 								"product",
 								"620c0da54a43d66b9010dac9"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/api/product/620cee29ccec4f356dc7736b",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"product",
+								"620cee29ccec4f356dc7736b"
 							]
 						}
 					},

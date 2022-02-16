@@ -14,6 +14,7 @@ import {CreateProductDto} from './dto/create-product.dto'
 import {ProductService} from './product.service'
 import {PRODUCT_NOT_FOUND} from './product.constants'
 import {BeAnObject, DocumentType} from '@typegoose/typegoose/lib/types'
+import {IdValidationPipe} from '../pipes/id-validation.pipe'
 
 @Controller('product')
 export class ProductController {
@@ -25,7 +26,7 @@ export class ProductController {
   }
 
   @Get(':id')
-  async get(@Param('id') id: string) {
+  async get(@Param('id', IdValidationPipe) id: string) {
     const product = this.productService.findById(id)
     if (!product) {
       throw new NotFoundException(PRODUCT_NOT_FOUND)
@@ -35,7 +36,7 @@ export class ProductController {
   }
 
   @Delete(':id')
-  async delete(@Param('id') id: string): Promise<void> {
+  async delete(@Param('id', IdValidationPipe) id: string): Promise<void> {
     const deletedProduct = this.productService.deleteById(id)
     if (!deletedProduct) {
       throw new NotFoundException(PRODUCT_NOT_FOUND)
@@ -44,7 +45,7 @@ export class ProductController {
 
   @Patch(':id')
   async patch(
-    @Param('id') id: string,
+    @Param('id', IdValidationPipe) id: string,
     @Body() dto: CreateProductDto,
   ) {
     const updatedProduct = this.productService.updateById(id, dto)
