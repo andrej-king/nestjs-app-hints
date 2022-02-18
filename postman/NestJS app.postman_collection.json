@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "29d000fe-2225-4c04-a12f-82c21e91bcc8",
+		"_postman_id": "1b65fc96-5558-4beb-b601-922a51be52ec",
 		"name": "NestJS app",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -275,6 +275,258 @@
 								"api",
 								"review",
 								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Top Page",
+			"item": [
+				{
+					"name": "Create Top page",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"description": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzFAZXhhbXBsZS5jb20iLCJpYXQiOjE2NDUyMTI5NTB9.Gd0KfkRRcvYiLL4VipOGVpDKHqvYPDzwUa55ai7e66g",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstCategory\": 1,\n    \"secondCategory\": \"Develop\",\n    \"alias\": \"typescript\",\n    \"title\": \"Some courses\",\n    \"category\": \"typescript\",\n    \"hh\": {\n        \"count\": 1000,\n        \"juniorSalary\": 1000,\n        \"middleSalary\": 1500,\n        \"seniorSalary\": 2000\n    },\n    \"advantages\": [{\n        \"title\": \"speed\",\n        \"description\": \"my description\"\n    }],\n    \"seoText\": \"test\",\n    \"tagsTitle\": \"Skills\",\n    \"tags\": [\"TypeScript\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/create",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top page by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"description": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6IjEyMzFAZXhhbXBsZS5jb20iLCJpYXQiOjE2NDUyMTI3NDZ9.iCOSENecYSJnRJNDP-PAqQHHbFQyQwTX806aVmMbwpM",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/620ff036d79a55463a9e0b70",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"620ff036d79a55463a9e0b70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Top page by id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/620ff036d79a55463a9e0b70",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"620ff036d79a55463a9e0b70"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Top page by alias",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/byAlias/typescript",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"byAlias",
+								"typescript"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find Top page by first category",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstCategory\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/find",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"find"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update top page by id",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstCategory\": 2,\n    \"secondCategory\": \"Develop\",\n    \"alias\": \"typescript\",\n    \"title\": \"Some courses\",\n    \"category\": \"typescript\",\n    \"hh\": {\n        \"count\": 1000,\n        \"juniorSalary\": 1000,\n        \"middleSalary\": 1500,\n        \"seniorSalary\": 2000\n    },\n    \"advantages\": [{\n        \"title\": \"speed\",\n        \"description\": \"my description\"\n    }],\n    \"seoText\": \"test\",\n    \"tagsTitle\": \"Skills\",\n    \"tags\": [\"TypeScript\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/top-page/620ff036d79a55463a9e0b70",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"top-page",
+								"620ff036d79a55463a9e0b70"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Files",
+			"item": [
+				{
+					"name": "Upload files",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "files",
+									"type": "file",
+									"src": "/Users/andrey/Downloads/wp4469816.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/files/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"files",
+								"upload"
 							]
 						}
 					},
