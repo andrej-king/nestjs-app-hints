@@ -7,11 +7,11 @@ import {
   NotFoundException,
   Param,
   Patch,
-  Post, UseGuards,
+  Post,
+  UseGuards,
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common'
-import {TopPageModel} from './top-page.model'
 import {FindTopPageDto} from './dto/find-top-page.dto'
 import {TopPageService} from './top-page.service'
 import {CreateTopPageDto} from './dto/create-top-page.dto'
