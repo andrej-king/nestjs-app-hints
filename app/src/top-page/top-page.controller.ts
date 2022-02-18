@@ -20,8 +20,7 @@ import {TOP_PAGE_NOT_FOUND_ERROR} from './top-page.constants'
 
 @Controller('top-page')
 export class TopPageController {
-  constructor(private readonly topPageService: TopPageService) {
-  }
+  constructor(private readonly topPageService: TopPageService) {}
 
   @UsePipes(new ValidationPipe())
   @Post('create')
@@ -58,10 +57,7 @@ export class TopPageController {
   }
 
   @Patch(':id')
-  async patch(
-    @Param('id') id: string,
-    @Body() dto: CreateTopPageDto,
-  ) {
+  async patch(@Param('id') id: string, @Body() dto: CreateTopPageDto) {
     const updatedPage = await this.topPageService.updateById(id, dto)
     if (!updatedPage) {
       throw new NotFoundException(TOP_PAGE_NOT_FOUND_ERROR)
