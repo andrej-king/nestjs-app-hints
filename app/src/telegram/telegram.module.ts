@@ -16,7 +16,9 @@ export class TelegramModule {
     }
   }
 
-  private static createAsyncOptionsProvider(options: ITelegramModuleAsyncOptions): Provider {
+  private static createAsyncOptionsProvider(
+    options: ITelegramModuleAsyncOptions,
+  ): Provider {
     return {
       provide: TELEGRAM_MODULE_OPTIONS,
       useFactory: async (...args: any[]) => {

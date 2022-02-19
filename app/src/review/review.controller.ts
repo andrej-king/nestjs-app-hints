@@ -2,7 +2,8 @@ import {
   Body,
   Controller,
   Delete,
-  Get, HttpCode,
+  Get,
+  HttpCode,
   HttpException,
   HttpStatus,
   Param,
@@ -36,12 +37,13 @@ export class ReviewController {
   @UsePipes(new ValidationPipe())
   @HttpCode(200)
   @Post('notify')
-  async notify(@Body() dto: CreateReviewDto): Promise<void > {
-    const message = `Name: ${dto.name}\n`
-      + `Title: ${dto.title}\n`
-      + `Description: ${dto.description}\n`
-      + `Rating: ${dto.rating}\n`
-      + `Product ID: ${dto.productId}`
+  async notify(@Body() dto: CreateReviewDto): Promise<void> {
+    const message =
+      `Name: ${dto.name}\n` +
+      `Title: ${dto.title}\n` +
+      `Description: ${dto.description}\n` +
+      `Rating: ${dto.rating}\n` +
+      `Product ID: ${dto.productId}`
 
     return this.telegramService.sendMessage(message)
   }
