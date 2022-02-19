@@ -538,12 +538,13 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "localhost:3000/2022-02-19/wp4469816.jpg",
+							"raw": "localhost:3000/static/2022-02-19/wp4469816.jpg",
 							"host": [
 								"localhost"
 							],
 							"port": "3000",
 							"path": [
+								"static",
 								"2022-02-19",
 								"wp4469816.jpg"
 							]
