@@ -531,6 +531,25 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get file",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/2022-02-19/wp4469816.jpg",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"2022-02-19",
+								"wp4469816.jpg"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
