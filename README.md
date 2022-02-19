@@ -27,6 +27,11 @@
   * [class-transformer][301]
   * [class-validator][302]
 * [passport js][303] Passport is authentication middleware for Node.js
+* [fs-extra][304] Adds file system methods that aren't included in the native fs module
+* [app-root-path][305] This simple module helps you access your application's root path from anywhere in the application without resorting to relative paths like require("../../path").
+* [date-fns][306] Modern JavaScript date utility library
+* [multer][307] Work with images
+* [sharp][308] The typical use case for this high speed Node.js module is to convert large images in common formats to smaller, web-friendly JPEG, PNG, WebP, GIF and AVIF images of varying dimensions.
 
 ## Nest helpful commands
 * `nest new <name>`[Creates][201] a new (standard mode) Nest project
@@ -55,3 +60,8 @@
 [301]: https://github.com/typestack/class-transformer
 [302]: https://github.com/typestack/class-validator
 [303]: https://www.passportjs.org/
+[304]: https://www.npmjs.com/package//fs-extra
+[305]: https://www.npmjs.com/package/app-root-path
+[306]: https://date-fns.org
+[307]: https://github.com/expressjs/multer
+[308]: https://sharp.pixelplumbing.com
