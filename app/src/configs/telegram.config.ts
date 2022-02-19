@@ -1,8 +1,15 @@
-import {ITelegramOptions} from '../telegram/telegram-options.interface'
+import {ITelegramOptions} from '../telegram/telegram.interface'
+import {ConfigService} from '@nestjs/config'
 
-export const getTelegramConfig = (): ITelegramOptions => {
+export const getTelegramConfig = (
+  configService: ConfigService,
+): ITelegramOptions => {
+  const token = configService.get('TELEGRAM_BOT_TOKEN')
+  if (!token) {
+    throw new Error('Telegram token not set')
+  }
   return {
-    token: '',
-    chatId: '',
+    token,
+    chatId: configService.get('TELEGRAM_CHAT_ID') ?? '',
   }
 }

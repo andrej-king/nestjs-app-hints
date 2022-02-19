@@ -2,7 +2,7 @@ import {
   Body,
   Controller,
   Delete,
-  Get,
+  Get, HttpCode,
   HttpException,
   HttpStatus,
   Param,
@@ -34,6 +34,7 @@ export class ReviewController {
   }
 
   @UsePipes(new ValidationPipe())
+  @HttpCode(200)
   @Post('notify')
   async notify(@Body() dto: CreateReviewDto): Promise<void > {
     const message = `Name: ${dto.name}\n`

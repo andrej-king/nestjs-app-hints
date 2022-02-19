@@ -279,6 +279,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Review notify to telegram",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Test review\",\n    \"title\": \"Review Header\",\n    \"description\": \"Test review description\",\n    \"rating\": 5,\n    \"productId\": \"620c0f56e452134b1659ad2a\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/api/review/notify",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"review",
+								"notify"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
