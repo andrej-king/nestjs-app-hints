@@ -30,6 +30,7 @@ export class HhService {
         },
       })
       const {data} = await lastValueFrom(httpResponse)
+      return this.parseData(data)
     } catch (e) {
       Logger.error(e)
     }
@@ -41,9 +42,9 @@ export class HhService {
       throw new Error(NOT_FOUND_CLUSTER)
     }
 
-    const juniorSalary = 0
-    const middleSalary = 0
-    const seniorSalary = 0
+    const juniorSalary = this.getSalaryFromString(salaryCluster.items[1].name)
+    const middleSalary = this.getSalaryFromString(salaryCluster.items[Math.ceil(salaryCluster.items.length / 2)].name)
+    const seniorSalary = this.getSalaryFromString(salaryCluster.items[salaryCluster.items.length - 1].name)
 
     return {
       count: data.found,
@@ -52,5 +53,16 @@ export class HhService {
       seniorSalary,
       updatedAt: new Date()
     }
+  }
+
+  private getSalaryFromString(s: string): number {
+    const numberRegExp = /(\d+)/g
+    const res = s.match(numberRegExp)
+
+    if (!res) {
+      return 0
+    }
+
+    return Number(res[0])
   }
 }
