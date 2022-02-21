@@ -8,7 +8,7 @@ import {HhData} from '../top-page/top-page.model'
 
 @Injectable()
 export class HhService {
-  token: string
+  private token: string
 
   constructor(
     private readonly configService: ConfigService,
@@ -24,10 +24,10 @@ export class HhService {
           text,
           cluster: true,
         },
-        headers: {
-          'User-Agent': 'OwlTop/1.0 (app@example.com)',
-          Authorization: 'Bearer ' + this.token,
-        },
+        // headers: {
+        //   'User-Agent': 'OwlTop/1.0 (app@example.com)',
+        //   Authorization: 'Bearer ' + this.token,
+        // },
       })
       const {data} = await lastValueFrom(httpResponse)
       return this.parseData(data)
