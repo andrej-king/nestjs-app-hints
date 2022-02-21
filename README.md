@@ -21,6 +21,7 @@
 * [Cli commands][103] Usage
 * [Request decorators][104]
 * [Providers][105] With DI. [Injection scopes][106]
+* [Nest JS task schedule][107]
 
 ## Helpful packages
 * Validate dto (work together):
@@ -43,13 +44,16 @@
 * `nest update` [Updates][206] `@nestjs` dependencies in the `package.json"dependencies"` list to their `@latest` version
 * `nest info` [Displays information][207] about installed nest packages and other helpful system info
 
+[//]: # (Nest JS helpful links)
 [101]: https://docs.nestjs.com/
 [102]: https://github.com/nestjs/typescript-starter
 [103]: https://docs.nestjs.com/cli/usages
 [104]: https://docs.nestjs.com/controllers#request-object
 [105]: https://docs.nestjs.com/providers
 [106]: https://docs.nestjs.com/fundamentals/injection-scopes
+[107]: https://docs.nestjs.com/techniques/task-scheduling
 
+[//]: # (Nest JS helpful commands)
 [201]: https://docs.nestjs.com/cli/usages#nest-new
 [202]: https://docs.nestjs.com/cli/usages#nest-generate
 [203]: https://docs.nestjs.com/cli/usages#nest-build
@@ -58,6 +62,7 @@
 [206]: https://docs.nestjs.com/cli/usages#nest-update
 [207]: https://docs.nestjs.com/cli/usages#nest-info
 
+[//]: # (Node JS helpful packages)
 [301]: https://github.com/typestack/class-transformer
 [302]: https://github.com/typestack/class-validator
 [303]: https://www.passportjs.org/
